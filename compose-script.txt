@@ -1,0 +1,10 @@
+git clone https://github.com/paichayon321/docker-rsvp.git
+cd docker-rsvp
+# To start compose stack
+docker-compose up -d
+
+# To list compose stack 
+docker-compose ps
+
+# To Remove compose stack
+docker-compose down
