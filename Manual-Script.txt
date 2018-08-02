@@ -15,7 +15,7 @@ docker run -d --name rsvpweb \
 -e "LINK=http://192.168.99:100:5000/" \
 -e "LOGO=https://cdn-images-1.medium.com/max/1600/1*lUNmBw_oyS2ADWqZs4DLOA.png" \
 -e "TEXT1=Hello PTT" \
--e "TEXT2=From Docker Compose" \
+-e "TEXT2=From Docker Manual Process" \
 -e "COMPANY=G-ABLE Ltd." \
 --network="rsvpnet" \
 paichayon/rsvp
