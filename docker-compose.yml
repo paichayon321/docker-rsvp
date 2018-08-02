@@ -11,7 +11,7 @@ services:
     networks:
       - rsvpnet
 
-  web:
+  rsvpweb:
     image: paichayon/rsvp
     ports:
       - "5000:5000"
