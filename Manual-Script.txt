@@ -2,7 +2,7 @@ docker network create rsvpnet
 docker volume create db_data
 # Run MongoDB
 docker run -d --name mongodb \
--p 27017 \
+--expose 27017 \
 -v db_data:/data/db \
 -e "MONGODB_DATABASE=rsvpdata" \
 --network="rsvpnet" \
@@ -10,7 +10,7 @@ mongo:3.3
 
 #
 docker run -d --name rsvpweb \
--p 5000:5000 \
+-p 5000 \
 -e "MONGODB_HOST=mongodb" \
 -e "LINK=http://192.168.99:100:5000/" \
 -e "LOGO=https://cdn-images-1.medium.com/max/1600/1*lUNmBw_oyS2ADWqZs4DLOA.png" \
