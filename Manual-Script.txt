@@ -7,8 +7,7 @@ docker run -d --name mongodb \
 -e "MONGODB_DATABASE=rsvpdata" \
 --network="rsvpnet" \
 mongo:3.3
-
-#
+# Run RSVPWeb
 docker run -d --name rsvpweb \
 -p 5000 \
 -e "MONGODB_HOST=mongodb" \
@@ -19,3 +18,5 @@ docker run -d --name rsvpweb \
 -e "COMPANY=G-ABLE Ltd." \
 --network="rsvpnet" \
 paichayon/rsvp
+# Check Container Process
+docker ps
