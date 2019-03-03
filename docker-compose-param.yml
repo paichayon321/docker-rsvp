@@ -1,0 +1,31 @@
+version: '2'
+services:
+  mongodb:
+    image: mongo:3.3
+    expose:
+      - "27017"
+    volumes:
+      - db_data:/data/db
+    environment:
+      MONGODB_DATABASE: rsvpdata
+    networks:
+      - rsvpnet
+
+  rsvpweb:
+    image: ${webimage}
+    ports:
+      - "5000"
+    environment:
+      MONGODB_HOST: mongodb
+      LINK: http://192.168.99:100:5000/
+      LOGO: https://cdn-images-1.medium.com/max/1600/1*lUNmBw_oyS2ADWqZs4DLOA.png
+      TEXT1: Hello PTT
+      TEXT2: From Docker Compose
+      COMPANY: G-ABLE Ltd.
+    networks:
+      - rsvpnet
+networks:
+  rsvpnet:
+
+volumes:
+  db_data:
