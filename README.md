@@ -7,7 +7,16 @@ cd docker-rsvp/
 ## Prepare demo image
 docker pull paichayon/rsvp
 docker tag paichayon/rsvp paichayon/rsvp:2
-export webimage=paichayon/rsvp && docker-compose build --build-arg=webimage=$webimage rsvpweb
-docker-compose config
-docker-compose up -d
+
+# Create and Update image on docker compose
+
+export webimage=paichayon/rsvp && docker-compose -f docker-compose-param.yml build --build-arg=webimage=$webimage rsvpweb
+docker-compose -f docker-compose-param.yml config
+docker-compose -f docker-compose-param.yml up -d
+
+# Update image on running commpose
+
+export webimage=paichayon/rsvp:2 && docker-compose -f docker-compose-param.yml build --build-arg=webimage=$webimage rsvpweb
+docker-compose -f docker-compose-param.yml config
+docker-compose -f docker-compose-param.yml up -d
 
