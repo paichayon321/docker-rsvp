@@ -27,10 +27,10 @@ docker-compose -f docker-compose-param.yml config
 docker-compose -f docker-compose-param.yml up -d
 
 # Custom docker compose network subnet
-networks:
-  rsvpnet:
-    driver: bridge
-    ipam:
-     config:
-       - subnet: 10.5.0.0/16
-         gateway: 10.5.0.1
+networks: <br>
+  rsvpnet:<br>
+    driver: bridge<br>
+    ipam:<br>
+     config:<br>
+       - subnet: 10.5.0.0/16 <br>
+         gateway: 10.5.0.1 <br>
