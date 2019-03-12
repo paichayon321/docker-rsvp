@@ -28,3 +28,8 @@ docker-compose -f docker-compose-param.yml up -d
 
 # Custom docker compose network subnet
 See sample in docker-compose-customnet.yml
+
+# Use docker compose with existing docker network
+First manual Create docker netowrk <br>
+docker network create --ip-range=192.168.5.0/24 --subnet=192.168.5.0/24 --gateway=192.168.5.1 fixnet
+See sample in docker-compose-fixnet.yml
